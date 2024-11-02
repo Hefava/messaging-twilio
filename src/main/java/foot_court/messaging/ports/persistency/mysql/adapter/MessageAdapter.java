@@ -1,4 +1,4 @@
-package foot_court.messaging.ports.persistency;
+package foot_court.messaging.ports.persistency.mysql.adapter;
 
 import com.twilio.Twilio;
 import com.twilio.rest.api.v2010.account.Message;
