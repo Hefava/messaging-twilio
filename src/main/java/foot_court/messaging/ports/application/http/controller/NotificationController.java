@@ -18,4 +18,9 @@ public class NotificationController {
         notificationServicePort.notifyOrderReady(request.getPhoneNumber());
         return ResponseEntity.ok().build();
     }
+
+    @GetMapping("/get-pin")
+    public ResponseEntity<String> getPin(@RequestParam String phoneNumber) {
+        return ResponseEntity.ok(notificationServicePort.getPin(phoneNumber));
+    }
 }

@@ -33,6 +33,11 @@ public class SendNotificationUseCase implements INotificationServicePort {
         messagePersistencePort.sendMessage(phoneNumber, message);
     }
 
+    @Override
+    public String getPin(String phoneNumber) {
+        return notificationPinPersistencePort.findPinByPhoneNumber(phoneNumber).orElse(null);
+    }
+
     private String generatePin() {
         return String.format(PIN_FORMAT, random.nextInt(1_000_000));
     }
